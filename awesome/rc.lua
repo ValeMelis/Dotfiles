@@ -1,3 +1,10 @@
+--    ,-.
+--    \_/      Miele's
+--   {|||)<    AwesomeWM
+--    / \      Dotfile
+--    `-'
+
+
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
@@ -13,6 +20,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+--Audio
+--local pulse = require("pulseaudio_widget")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -136,13 +145,19 @@ globalkeys = gears.table.join(
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
-
+	
     awful.key({ modkey,           }, "j",
         function ()
             awful.client.focus.byidx( 1)
         end,
         {description = "focus next by index", group = "client"}
     ),
+	
+    --Audio
+    --awful.key({ }, "XF86AudioRaiseVolume", pulse.volume_up),
+    --awful.key({ }, "XF86AudioLowerVolume", pulse.volume_down),
+    --awful.key({ }, "XF86AudioMute",  pulse.toggle_muted),
+
     awful.key({ modkey,           }, "k",
         function ()
             awful.client.focus.byidx(-1)

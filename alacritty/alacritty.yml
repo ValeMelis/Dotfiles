@@ -1,4 +1,8 @@
-#Vale's alacritty config file
+#    ,-.
+#    \_/          Miele's
+#   {|||)<        Alacritty Terminal
+#    / \          Dotfile
+#    `-'
 
 window:
   opacity: 0.5
